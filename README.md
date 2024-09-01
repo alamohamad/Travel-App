@@ -9,6 +9,10 @@ Travel Planner is a single-page application that allows users to plan their trip
 - **Web Server**: Node.js
   - Handles backend server operations and request processing.
 
+  ## Node.js Version
+This project was built and tested using Node.js version 20.16.0. Please ensure you have this version installed for best compatibility.
+
+
 - **Web Framework**: Express
   - Manages routing and API handling on the backend.
 
