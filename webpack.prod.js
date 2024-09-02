@@ -29,6 +29,22 @@ module.exports = merge(config, {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({ filename: "[name].css" }),
-      
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+            runtimeCaching: [
+                {
+                    urlPattern: /\.(?:js|css|html|png|jpg|jpeg|svg)$/,
+                    handler: 'CacheFirst',
+                    options: {
+                        cacheName: 'assets-cache',
+                        expiration: {
+                            maxEntries: 20,
+                            maxAgeSeconds: 30 * 24 * 60 * 60, 
+                        },
+                    },
+                },
+            ],
+        }),
     ]
 });

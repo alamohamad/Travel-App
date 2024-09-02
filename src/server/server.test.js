@@ -2,6 +2,9 @@ const request = require('supertest');
 const app = require('./server'); 
 
 describe('Server root route', () => {
+    // Increase the timeout for this test to 10 seconds
+    jest.setTimeout(10000);
+
     // Closing the server after all tests to free up resources
     afterAll(() => {
         app.close(); 

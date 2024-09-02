@@ -1,7 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const WorkboxPlugin = require('workbox-webpack-plugin');
 const dotenv = require('dotenv').config();
 
 module.exports = {
@@ -38,12 +37,8 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
-        new WorkboxPlugin.GenerateSW({
-            clientsClaim: true,
-            skipWaiting: true,
-        }),
         new webpack.DefinePlugin({
             'process.env': JSON.stringify(dotenv.parsed)
-        })
+        }),
     ]
 };
