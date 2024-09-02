@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const config = require('./webpack.config.js');
 
 module.exports = merge(config, {
@@ -28,5 +29,6 @@ module.exports = merge(config, {
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({ filename: "[name].css" }),
+      
     ]
 });

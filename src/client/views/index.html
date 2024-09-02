@@ -33,8 +33,17 @@
             </div>
         </section>
     </div>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+    
 </body>
 <footer> 
-  <h5>@By_Alaa_Shubita</h1>
+  <h5>@By_Alaa_Shubita</h5>
 </footer>
 </html>
